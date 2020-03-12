@@ -1,4 +1,4 @@
-# Browsers
+# Opdracht 1.2
 
 ## Nexus 5
 ### Versie
@@ -18,7 +18,7 @@ Kindle 3.0, Kindle 3 webbrowser
 IOS 9.3.5, Safari 9.0
 
 ### Bevindingen
-- De Javascript laadt de data niet in, waardoor de loading state nooit meer weg gaat. Dit heb ik namelijk met Javascript geschreven. Als de data is ingeladen, moet een class weggehaald worden.
+- De Javascript laadt de data fetch niet in, waardoor de loading state nooit meer weg gaat. Dit heb ik namelijk met Javascript geschreven. Als de data is ingeladen, moet een class weggehaald worden.
 
 ## iPod Touch
 ### Versie
