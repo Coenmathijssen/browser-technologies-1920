@@ -1,5 +1,13 @@
 # Opdracht 1.2
+# Geteste webapp
+https://coenmathijssen.github.io/web-app-from-scratch-1920/
 
+# Testen op verschillende browsers
+- Chrome v79: ik heb de webapp met behulp van chrome gebouwd, dus hier zijn er ook geen bugs aanwezig.
+- FireFox v74: ook op FireFox werkt alles precies naar behoren
+- Brave v1.4.96: bij de brave browser idem. Alles werkt naar behoren.
+
+# Testen op verschillende devices
 ## Nexus 5
 ### Versie
 Android 6.0.1, Chrome 75
