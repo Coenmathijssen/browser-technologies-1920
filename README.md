@@ -36,3 +36,8 @@ IOS 6.1.6. Safari 8536.25
 - De Javascript doet het in zijn geheel niet, waardoor de loading state ook niet verschijnt en blijft hangen.
 - De CSS grid en flexbox zijn nog niet ondersteund, waardoor de layout overhoop gaat.
 - Er wordt geen data ingeladen door de afwezige Javascript, dus alleen het introblok met de zoekbalk is aanwezig. SVG's laden in.
+
+# Opdracht 2 
+![schetsen-web-1](https://user-images.githubusercontent.com/43337909/76967537-e41d7c00-6927-11ea-9467-fd701fd343ff.jpg)
+![schetsen-web-2](https://user-images.githubusercontent.com/43337909/76967542-e67fd600-6927-11ea-900b-5f8da1bb6181.jpg)
+![schetsen-web-3](https://user-images.githubusercontent.com/43337909/76967544-e7186c80-6927-11ea-84eb-89e3af49e08c.jpg)
