@@ -1,0 +1,114 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: catamaran, arial, sans-serif;
+}
+
+nav {
+  max-width: 600px;
+  margin: 30px auto;
+}
+nav ul {
+  padding: 10px 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #232327;
+  box-shadow: 1px 1px 0px #000000, 1.5px 1.5px 0px #000000, 2px 2px 0px #000000, 2.5px 2.5px 0px #000000, 3px 3px 0px #000000, 3.5px 3.5px 0px #000000, 4px 4px 0px #000000, 4.5px 4.5px 0px #000000, 5px 5px 0px #000000, 5.5px 5.5px 0px #000000, 6px 6px 0px #000000, 6.5px 6.5px 0px #000000, 7px 7px 0px #000000;
+}
+nav ul li {
+  position: relative;
+  font-family: catamaran, arial, sans-serif;
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FDFDFD;
+}
+nav ul a {
+  text-decoration: none;
+}
+nav ul a:nth-of-type(1) li::after, nav ul a:nth-of-type(2) li::after, nav ul a:nth-of-type(3) li::after, nav ul a:nth-of-type(4) li::after {
+  position: absolute;
+  content: "";
+  top: 30%;
+  transform: translateX(9px);
+  background: url("/arrow-right.00ed5314.svg") no-repeat;
+  background-size: 30px;
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+}
+
+main div {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+main div section.t-shirt {
+  width: calc(50% - 100px);
+  padding: 0 50px;
+}
+main div section.t-shirt .shirt-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+main div section.t-shirt .shirt-button-container button {
+  font-family: quicksand, arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: none;
+  background: none;
+  color: inherit;
+  border: solid 1px #232327;
+  padding: 5px 10px;
+}
+main div section.choose {
+  width: calc(50% - 100px);
+  padding: 0 50px;
+}
+main div section.choose fieldset {
+  padding: 50px 20px;
+  text-align: center;
+  border: 1px solid #000000;
+}
+main div section.choose fieldset legend {
+  font-family: catamaran, arial, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+main div section.choose fieldset div.options {
+  width: calc(100% - 100px);
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+main div section.choose fieldset div.options input[type=radio] {
+  opacity: 0;
+}
+main div section.choose fieldset div.options input[type=radio] + label {
+  padding: 20px;
+  border: solid 2px rgba(0, 0, 0, 0);
+  transition: all 0.3s;
+}
+main div section.choose fieldset div.options input[type=radio]:hover + label {
+  cursor: pointer;
+}
+main div section.choose fieldset div.options label {
+  font-family: quicksand, arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+main div section.choose fieldset div.options label img {
+  margin: 0 auto 10px;
+  max-width: 80px;
+  display: block;
+}
+main div section.choose fieldset div.options div input[type=radio]:checked + label {
+  border: solid 2px #232327;
+  transition: all 0.3s;
+}
+
+/*# sourceMappingURL=/main.3d277483.css.map */

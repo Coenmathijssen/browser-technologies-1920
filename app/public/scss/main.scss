@@ -1,0 +1,91 @@
+@import 'typography';
+@import 'colors';
+@import 'navigation';
+
+main div {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  section.t-shirt {
+    width: calc(50% - 100px);
+    padding: 0 50px;
+
+    .shirt-button-container {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        font-family: quicksand, arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: none;
+        background: none;
+        color: inherit;
+        border: solid 1px $semi-black;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  section.choose {
+    width: calc(50% - 100px);
+    padding: 0 50px;
+
+    fieldset {
+      padding: 50px 20px;
+      text-align: center;
+      border: 1px solid $black;
+
+      legend {
+        font-family: catamaran, arial, sans-serif;
+        font-size: 2em;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      div.options {
+        width: calc(100% - 100px);
+        padding: 0 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        input[type="radio"] {
+          opacity: 0;
+        }
+
+        input[type="radio"] + label {
+          padding: 20px;
+          border: solid 2px rgba(0,0,0,0);
+          transition: all .3s;
+        }
+
+        input[type="radio"]:hover + label {
+          cursor: pointer;
+        }
+
+        label {
+          font-family: quicksand, arial, sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+
+          img {
+            margin: 0 auto 10px;
+            max-width: 80px;
+            display: block;
+          }
+        }
+        div {
+          input[type="radio"]:checked + label {
+            border: solid 2px $semi-black;
+            transition: all .3s;
+          }
+        }
+      }
+    }
+  }
+}
