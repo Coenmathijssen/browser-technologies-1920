@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.98 28.2">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #333;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #000;
+        stroke-width: 0.5px;
+      }
+
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>v-neck</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Objects">
+      <g>
+        <polyline class="cls-1" points="3.7 3.06 18.82 6.57 34.15 6.57 48.95 3.06 32.88 22.3 27.7 26.32 9.3 11.09"/>
+        <path class="cls-2" d="M4.33,1.18S23.7,35.73,48,1.56C48,1.56,22.74,11.34,4.33,1.18Z"/>
+        <path class="cls-3" d="M6.58,4.78s15.2,8.71,39.54-.23"/>
+        <path class="cls-3" d="M4.44,1.53s15.94,9,43.77,0"/>
+        <path class="cls-1" d="M52.6,1c-9.07,16.46-25,26.89-25,26.89C5.12,15.54.32,1.47.32,1.47L3.52.4S12.45,15.5,27.79,24c0,0,13.09-10.64,21.35-23.68Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

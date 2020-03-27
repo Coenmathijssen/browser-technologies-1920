@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 3000
 const path = require('path')
-const router = express.Router()
 
 const fs = require('fs')
 
@@ -19,18 +18,32 @@ app.set('views', path.join(__dirname, 'views'))
 // Rendering homescreen
 app.get('/', function (req, res) {
   res.render('test.ejs', {
-    data: getRandomNumber(10000)
+    id: getRandomNumber(10000)
   })
 })
 
-// Rendering homescreen
-app.get('/vorm', function (req, res) {
-  res.render('vorm.ejs')
+// Rendering shirt designer
+app.get('/shirt-designer', function (req, res) {
+  res.render('user-form.ejs', {
+    generatedID: getRandomNumber(10000),
+    userData: null
+  })
 })
+
+// Rendering the form screen for a specific user
+app.get('/shirt-designer/:id', findItem)
+
+async function findItem (req, res) {
+  const id = req.params.id
+  const foundItem = await matchItem(id)
+  res.render('user-form.ejs', {
+    userData: foundItem
+  })
+}
 
 // Code from Menno
 function storeData (data) {
-  const { name, email } = data
+  const { id, gender, neck, size, color } = data
   const jsonFile = 'data/data.json'
 
   fs.readFile(jsonFile, (err, content) => {
@@ -38,14 +51,38 @@ function storeData (data) {
 
     const contentJSON = JSON.parse(content)
 
-    const formData = { name, email }
+    const formData = { id, gender, neck, size, color }
+    console.log('formData: ', formData)
 
-    contentJSON.data.push(formData)
+    checkForDuplicateData(contentJSON, formData)
+
 
     fs.writeFile(jsonFile, JSON.stringify(contentJSON), err => {
       if (err) console.log(err)
+    })
+  })
+}
 
-      console.log(jsonFile)
+function checkForDuplicateData (contentJSON, formData) {
+  const index = contentJSON.data.findIndex((data) => data.id === formData.id)
+
+  if (index === -1) {
+    console.log('doesnt exist')
+    contentJSON.data.push(formData)
+  } else {
+    console.log('exists')
+    contentJSON.data[index] = formData
+  }
+}
+
+function matchItem (id) {
+  return new Promise((resolve, reject) => {
+    const jsonFile = 'data/data.json'
+    return fs.readFile(jsonFile, (err, content) => {
+      if (err) return console.log(err)
+      const contentJSON = JSON.parse(content)
+      const foundItem = contentJSON.data.filter(found => { return found.id === id })
+      resolve((foundItem.length !== 0 ? foundItem[0] : false))
     })
   })
 }
@@ -61,6 +98,5 @@ app.use(express.urlencoded({ extended: false }))
 // POST /login gets urlencoded bodies
 app.post('/submit', (req, res) => {
   storeData(req.body)
-  console.log(req.body)
   res.redirect('/')
 })

@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="/main.3d277483.css">
 </head>
 <body>
-  <h1><%=data.id%></h1>
-  <h1><%=data.gender%></h1>
   <nav>
     <ul>
       <a href="/vorm">
@@ -29,12 +27,12 @@
       </a>
     </ul>
   </nav>
-  <a href="">
+ <!--  <a href="">
     <div class="favorites">
       <img src="/heart.f80e3259.svg" alt="Image of a heart">
       <p>Favorites</p>
     </div>
-  </a>
+  </a> -->
   <main>
     <div>
       <section class="t-shirt">
@@ -46,19 +44,34 @@
       </section>
       <section class="choose">
         <form method="POST" action="/submit">
-          <input type="text" name="id" value= "<%=id%>">
+          <% if(userData !== null) { %>
+            <input type="text" name="id" value=" <%=userData.id%>">
+          <% } else {  %>
+            <input type="text" name="id" value="<%=generatedID%>">
+          <% } %>
+
           <fieldset class="form">
             <legend>Welke pasvorm wil je het liefst?</legend>
             <div class="options">
               <div>
-                <input type="radio" id="male" name="gender" value="male">
+
+                    <input type="radio" id="male" name="gender" value="male"
+                      <% if(userData !== null && userData.gender === 'male') { %>
+                        checked
+                      <% } %>
+                    >
+
                 <label for="male">
                   <img src="/shirt_front_male_reg.af3a4699.svg" alt="male t-shirt form">
                   Mannelijk
                 </label>
               </div>
               <div>
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="female"
+                  <% if(userData !== null && userData.gender === 'female') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="female">
                   <img src="/shirt_front_female_reg.4703679a.svg" alt="female t-shirt form">
                   Vrouwelijk
@@ -70,14 +83,22 @@
             <legend>Welke kraag zou je willen?</legend>
             <div class="options">
               <div>
-                <input type="radio" id="v-neck" name="neck" value="v-neck">
+                <input type="radio" id="v-neck" name="neck" value="v-neck"
+                  <% if(userData !== null && userData.neck === 'v-neck') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="v-neck">
                   <img src="/v-neck.46508135.svg" alt="V-neck">
                   V-hals
                 </label>
               </div>
               <div>
-                <input type="radio" id="reg-neck" name="neck" value="reg-neck">
+                <input type="radio" id="reg-neck" name="neck" value="reg-neck"
+                  <% if(userData !== null && userData.neck === 'reg-neck') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="reg-neck">
                   <img src="/reg-neck.e9c7619f.svg" alt="Regular neck">
                   Ronde hals
@@ -89,25 +110,41 @@
             <legend>Welk formaat moet het t-shirt zijn?</legend>
             <div class="options">
               <div>
-                <input type="radio" id="small" name="size" value="small">
+                <input type="radio" id="small" name="size" value="small"
+                  <% if(userData !== null && userData.size === 'small') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="small">
                   Small
                 </label>
               </div>
               <div>
-                <input type="radio" id="regular" name="size" value="regular">
+                <input type="radio" id="regular" name="size" value="regular"
+                  <% if(userData !== null && userData.size === 'regular') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="regular">
                   Regular
                 </label>
               </div>
               <div>
-                <input type="radio" id="large" name="size" value="large">
+                <input type="radio" id="large" name="size" value="large"
+                  <% if(userData !== null && userData.size === 'large') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="large">
                   Large
                 </label>
               </div>
               <div>
-                <input type="radio" id="x-large" name="size" value="x-large">
+                <input type="radio" id="x-large" name="size" value="x-large"
+                  <% if(userData !== null && userData.size === 'x-large') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="x-large">
                   X-large
                 </label>
@@ -115,40 +152,64 @@
             </div>
           </fieldset>
           <fieldset class="form">
-            <legend>Welk formaat moet het t-shirt zijn?</legend>
+            <legend>Welke kleur moet het t-shirt zijn?</legend>
             <div class="options color">
               <div>
-                <input type="radio" id="red" name="color" value="red">
+                <input type="radio" id="red" name="color" value="red"
+                  <% if(userData !== null && userData.color === 'red') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="red">
                   Rood
                 </label>
               </div>
               <div>
-                <input type="radio" id="green" name="color" value="green">
+                <input type="radio" id="green" name="color" value="green"
+                  <% if(userData !== null && userData.color === 'green') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="green">
                   Groen
                 </label>
               </div>
               <div>
-                <input type="radio" id="white" name="color" value="white">
+                <input type="radio" id="white" name="color" value="white"
+                  <% if(userData !== null && userData.color === 'white') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="white">
                   Wit
                 </label>
               </div>
               <div>
-                <input type="radio" id="black" name="color" value="black">
+                <input type="radio" id="black" name="color" value="black"
+                  <% if(userData !== null && userData.color === 'black') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="black">
                   Zwart
                 </label>
               </div>
               <div>
-                <input type="radio" id="blue" name="color" value="blue">
+                <input type="radio" id="blue" name="color" value="blue"
+                  <% if(userData !== null && userData.color === 'blue') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="blue">
                   Blauw
                 </label>
               </div>
               <div>
-                <input type="radio" id="pink" name="color" value="pink">
+                <input type="radio" id="pink" name="color" value="pink"
+                  <% if(userData !== null && userData.color === 'pink') { %>
+                    checked
+                  <% } %>
+                >
                 <label for="pink">
                   Roze
                 </label>
