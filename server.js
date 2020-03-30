@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = process.env.port || 3000
 const path = require('path')
 
 // Importing files
@@ -10,7 +9,7 @@ app.use(router)
 const fs = require('fs')
 
 // Setting up port for express to use
-app.listen(port, () => console.log(`app ${port}!`))
+app.listen(process.env.PORT || 3000)
 
 //  Serve html, css and js files in the static directory
 app.use(express.static(path.join(__dirname, 'dist')))
