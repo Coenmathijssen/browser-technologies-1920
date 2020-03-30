@@ -631,7 +631,7 @@ main div section.choose .fieldsets fieldset div.options div {
 }
 
 main div section.choose .fieldsets fieldset div.options div input[type=radio]:checked + label {
-  border: solid 2px $semi-black;
+  border: solid 2px rgba(0,0,0,0);
 }
 
 @supports(align-items: stretch) {
@@ -652,6 +652,6 @@ main div section.choose .fieldsets fieldset div.options input[type=radio] {
   }
 
   main div section.choose .fieldsets fieldset div.options div input[type=radio]:checked + label {
-    border: solid 2px rgba(0,0,0,0);
+    border: solid 2px $semi-black;
   }
 }
