@@ -2,41 +2,98 @@
 @import 'colors';
 @import 'navigation';
 
-.favorites {
-  max-width: 50px;
-  padding: 5px 20px;
-  position: absolute;
-  left: 3vw;
-  top: 5vh;
-  border: solid 2px $semi-black;
-  background-color: $white;
-
-  p {
-    text-decoration: none;
-    display: inline;
-    font-family: catamaran, arial, sans-serif;
-    color: $black;
-    font-weight: bold;
-  }
+* {
+  box-sizing: border-box;
 }
 
-// input[name="id"] {
-//   display: none;
+html {
+  scroll-behavior: smooth;
+}
+
+// .favorites {
+//   max-width: 50px;
+//   padding: 5px 20px;
+//   position: absolute;
+//   left: 3vw;
+//   top: 5vh;
+//   border: solid 2px $semi-black;
+//   background-color: $white;
+
+//   p {
+//     text-decoration: none;
+//     display: inline;
+//     font-family: catamaran, arial, sans-serif;
+//     color: $black;
+//     font-weight: bo§ld;
+//   }
 // }
+
+input[name="id"] {
+  display: none;
+}
+
+main > div.container {
+  min-height: 90vh;
+}
 
 main div {
   display: flex;
-  width: 100%;
-  max-width: 1280px;
+  max-width: 1080px;
   margin: 0 auto;
+  padding: 0 30px;
 
   section.t-shirt {
-    width: calc(50% - 100px);
-    padding: 0 50px;
+    width: 50%;
+    padding: 0 20px;
+
+    // .text-display {
+    //   display: none;
+    // }
+
+    .image-container {
+      position: sticky;
+      top: 5vh;
+
+      .image {
+        display: block;
+        width: 100%;
+
+        &#red svg path {
+          fill: $red;
+        }
+
+        &#green svg path {
+          fill: $green;
+        }
+
+        &#white svg path {
+          fill: $white;
+        }
+
+        &#black svg path {
+          fill: $semi-black;
+        }
+
+        &#blue svg path {
+          fill: $blue;
+        }
+
+        &#pink svg path {
+          fill: $pink;
+        }
+
+        svg {
+          width: 100%;
+          transition: all .3s;
+        }
+      }
+    }
 
     .shirt-button-container {
       display: flex;
       justify-content: space-between;
+      position: sticky;
+      top: 90vh;
 
       button {
         position: relative;
@@ -91,104 +148,281 @@ main div {
   }
 
   section.choose {
-    width: calc(50% - 100px);
-    padding: 0 50px;
+    width: 50%;
+    padding: 0 20px;
 
-    fieldset {
-      padding: 20px;
-      text-align: center;
-      border: 1px solid $black;
+    .fieldsets {
+      display: flex;
+      flex-direction: column;
 
-      legend {
-        font-family: catamaran, arial, sans-serif;
-        font-size: 2em;
-        font-weight: bold;
-        letter-spacing: 2px;
-      }
+      fieldset {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        text-align: center;
+        border: solid 2px black;
+        margin: 20px 0;
 
-      div.options {
-        display: flex;
-        flex-direction: row;
-        justify-content: stretch;
-        align-items: center;
-        flex-wrap: wrap;
-
-        input[type="radio"] {
-          opacity: 0;
-          position: absolute;
+        legend {
+          font-family: catamaran, arial, sans-serif;
+          font-size: 2em;
+          font-weight: bold;
+          letter-spacing: 2px;
         }
 
-        input[type="radio"] + label {
-          padding: 20px;
-          border: solid 2px rgba(0,0,0,0);
-          transition: all .3s;
-        }
+        div.options {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
 
-        input[type="radio"]:hover + label {
-          cursor: pointer;
-        }
-
-        label {
-          width: 100%;
-          font-family: quicksand, arial, sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-
-          img {
-            margin: 0 auto 10px;
-            max-width: 80px;
-            display: block;
+          input[type="radio"] {
+            opacity: 0;
+            position: absolute;
           }
-        }
-        div {
-          align-self: stretch;
-          width: calc(50% - 30px);
-          margin: 15px;
 
-          input[type="radio"]:checked + label {
-            border: solid 2px $semi-black;
+          input[type="radio"] + label {
+            padding: 20px;
+            border: solid 2px rgba(0,0,0,0);
             transition: all .3s;
           }
-        }
-      }
 
-      div.options.color {
-        input[type="radio"]#red:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $red;
-          color: $white;
-        }
+          input[type="radio"]:hover + label {
+            cursor: pointer;
+          }
 
-        input[type="radio"]#green:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $green;
-          color: $black;
-        }
+          label {
+            width: 100%;
+            padding: 15px;
+            font-family: quicksand, arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
 
-        input[type="radio"]#white:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $white;
-          color: $black;
-        }
+            img {
+              margin: 0 auto 10px;
+              max-width: 80px;
+              display: block;
+            }
+          }
+          div {
+            align-self: stretch;
+            width: 50%;
+            padding: 5px;
+            margin: 0;
 
-        input[type="radio"]#black:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $semi-black;
-          color: $white;
-        }
-
-        input[type="radio"]#blue:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $blue;
-          color: $black;
+            input[type="radio"]:checked + label {
+              border: solid 2px $semi-black;
+              transition: all .3s;
+            }
+          }
         }
 
-         input[type="radio"]#pink:checked + label {
-          border: solid 2px $semi-black;
-          background-color: $pink;
-          color: $black;
+        div.options.color {
+          input[type="radio"]#red:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $red;
+            color: $white;
+          }
+
+          input[type="radio"]#green:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $green;
+            color: $black;
+          }
+
+          input[type="radio"]#white:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $white;
+            color: $black;
+          }
+
+          input[type="radio"]#black:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $semi-black;
+            color: $white;
+          }
+
+          input[type="radio"]#blue:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $blue;
+            color: $black;
+          }
+
+           input[type="radio"]#pink:checked + label {
+            border: solid 2px $semi-black;
+            background-color: $pink;
+            color: $black;
+          }
+        }
+
+    }
+
+    }
+
+    input[type="submit"] {
+      border: solid 2px $semi-black;
+      width: 100%;
+      padding: 15px 0;
+      background: $semi-black;
+      color: $white;
+      font-family: catamaran, arial, sans-serif;
+      font-weight: bold;
+      font-size: 1.5em;
+      transition: all .3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: rgba(0,0,0,0);
+      color: $semi-black;
+      transition: all .3s;
+    }
+  }
+}
+
+
+main div.carousel-active {
+  align-items: center;
+
+  section.t-shirt {
+    .text-display {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+      max-width: 40%;
+      text-align: center;
+      z-index: 999;
+    }
+  }
+
+  section.choose {
+    div.fieldsets {
+      position: relative;
+      display: block;
+      min-height: 350px;
+      overflow: hidden;
+      border: solid 2px $semi-black;
+
+      fieldset {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        margin: 0;
+        box-sizing: border-box;
+        border: none;
+        transition: all .5s .3s ease-in-out;
+
+        &:nth-of-type(2) {
+          left: 100%;
+        }
+
+        &:nth-of-type(3) {
+          left: 200%;
+        }
+
+        &:nth-of-type(4) {
+          left: 300%;
+        }
+
+         &:nth-of-type(5) {
+          left: 400%;
         }
       }
     }
   }
+}
+
+fieldset {
+  &:nth-of-type(5) {
+    font-family: quicksand, arial, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1em;
+
+    input[name="text"] {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      padding: 5px;
+      margin: 1vh auto 3vh;
+      border: solid 1px black;
+    }
+
+    div {
+      display: block;
+
+      &:first-of-type {
+        margin-bottom: 3vh;
+      }
+
+      select {
+        border: solid 1px black;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: rgba(0,0,0,0);
+        background-position: right 50%;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1"><path d="M4 8L0 4h8z"/></svg>');
+        padding: .5em;
+        padding-right: 1.5em;
+      }
+    }
+  }
+}
+
+.text-display {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  max-width: 40%;
+  text-align: center;
+
+  &#spicy-rice {
+    font-family: 'Spicy Rice', arial, cursive;
+  }
+
+  &#anton {
+    font-family: 'Anton', arial, sans-serif;
+  }
+
+  &#lobster {
+    font-family: 'Lobster', cursive;
+  }
+
+  &#arvo {
+    font-family: 'Arvo', arial, serif;
+  }
+
+  &.red {
+    color: $red;
+  }
+
+  &.green {
+    color: $green;
+  }
+
+  &.white {
+    color: $white;
+  }
+
+  &.black {
+    color: $black;
+  }
+
+  &.blue {
+    color: $blue;
+  }
+
+  &.pink {
+    color: $pink;
+  }
+}
+
+@media print
+{
+.noprint {display:none;}
 }

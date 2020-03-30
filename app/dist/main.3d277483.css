@@ -2,11 +2,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: catamaran, arial, sans-serif;
 }
 
-nav {
-  max-width: 600px;
-  margin: 30px auto;
+.top-bar {
+  display: flex;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 30px;
+  justify-content: space-around;
+  align-items: center;
 }
-nav ul {
+.top-bar nav {
+  max-width: 600px;
+  width: 70%;
+}
+.top-bar nav ul {
   padding: 10px 0;
   list-style-type: none;
   display: flex;
@@ -14,7 +22,7 @@ nav ul {
   background-color: #232327;
   box-shadow: 1px 1px 0px #000000, 1.5px 1.5px 0px #000000, 2px 2px 0px #000000, 2.5px 2.5px 0px #000000, 3px 3px 0px #000000, 3.5px 3.5px 0px #000000, 4px 4px 0px #000000, 4.5px 4.5px 0px #000000, 5px 5px 0px #000000, 5.5px 5.5px 0px #000000, 6px 6px 0px #000000, 6.5px 6.5px 0px #000000, 7px 7px 0px #000000;
 }
-nav ul li {
+.top-bar nav ul li {
   position: relative;
   font-family: catamaran, arial, sans-serif;
   font-size: 1em;
@@ -22,10 +30,10 @@ nav ul li {
   text-transform: uppercase;
   color: #FDFDFD;
 }
-nav ul a {
+.top-bar nav ul a {
   text-decoration: none;
 }
-nav ul a:nth-of-type(1) li::after, nav ul a:nth-of-type(2) li::after, nav ul a:nth-of-type(3) li::after, nav ul a:nth-of-type(4) li::after {
+.top-bar nav ul a:nth-of-type(1) li::after, .top-bar nav ul a:nth-of-type(2) li::after, .top-bar nav ul a:nth-of-type(3) li::after, .top-bar nav ul a:nth-of-type(4) li::after {
   position: absolute;
   content: "";
   top: 30%;
@@ -36,37 +44,91 @@ nav ul a:nth-of-type(1) li::after, nav ul a:nth-of-type(2) li::after, nav ul a:n
   height: 20px;
   display: inline-block;
 }
-
-.favorites {
-  max-width: 50px;
-  padding: 5px 20px;
-  position: absolute;
-  left: 3vw;
-  top: 5vh;
-  border: solid 2px #232327;
+.top-bar .search {
+  padding: 5px 10px;
+  width: 30%;
   background-color: #FDFDFD;
+  border: solid 2px #232327;
+  box-shadow: 1px 1px 0px #000000, 1.5px 1.5px 0px #000000, 2px 2px 0px #000000, 2.5px 2.5px 0px #000000, 3px 3px 0px #000000, 3.5px 3.5px 0px #000000, 4px 4px 0px #000000, 4.5px 4.5px 0px #000000, 5px 5px 0px #000000, 5.5px 5.5px 0px #000000, 6px 6px 0px #000000, 6.5px 6.5px 0px #000000, 7px 7px 0px #000000;
 }
-.favorites p {
-  text-decoration: none;
-  display: inline;
+.top-bar .search input[type=text] {
+  width: 70%;
+  border: solid 1px #000000;
+  background: none;
+  font-family: quicksand, arial, sans-serif;
+  font-size: 1em;
+  color: #232327;
+}
+.top-bar .search input[type=submit] {
+  width: 30%;
   font-family: catamaran, arial, sans-serif;
-  color: #000000;
+  font-size: 1em;
   font-weight: bold;
+  background-color: #232327;
+  color: #FDFDFD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input[name=id] {
+  display: none;
+}
+
+main > div.container {
+  min-height: 90vh;
 }
 
 main div {
   display: flex;
-  width: 100%;
-  max-width: 1280px;
+  max-width: 1080px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 main div section.t-shirt {
-  width: calc(50% - 100px);
-  padding: 0 50px;
+  width: 50%;
+  padding: 0 20px;
+}
+main div section.t-shirt .image-container {
+  position: sticky;
+  top: 5vh;
+}
+main div section.t-shirt .image-container .image {
+  display: block;
+  width: 100%;
+}
+main div section.t-shirt .image-container .image#red svg path {
+  fill: #B10E03;
+}
+main div section.t-shirt .image-container .image#green svg path {
+  fill: #B4EEB4;
+}
+main div section.t-shirt .image-container .image#white svg path {
+  fill: #FDFDFD;
+}
+main div section.t-shirt .image-container .image#black svg path {
+  fill: #232327;
+}
+main div section.t-shirt .image-container .image#blue svg path {
+  fill: #2AB0B9;
+}
+main div section.t-shirt .image-container .image#pink svg path {
+  fill: #FFB6C1;
+}
+main div section.t-shirt .image-container .image svg {
+  width: 100%;
+  transition: all 0.3s;
 }
 main div section.t-shirt .shirt-button-container {
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 90vh;
 }
 main div section.t-shirt .shirt-button-container button {
   position: relative;
@@ -113,88 +175,233 @@ main div section.t-shirt .shirt-button-container button:last-of-type::after {
   display: inline-block;
 }
 main div section.choose {
-  width: calc(50% - 100px);
-  padding: 0 50px;
+  width: 50%;
+  padding: 0 20px;
 }
-main div section.choose fieldset {
+main div section.choose .fieldsets {
+  display: flex;
+  flex-direction: column;
+}
+main div section.choose .fieldsets fieldset {
+  width: 100%;
+  height: 100%;
   padding: 20px;
   text-align: center;
-  border: 1px solid #000000;
+  border: solid 2px black;
+  margin: 20px 0;
 }
-main div section.choose fieldset legend {
+main div section.choose .fieldsets fieldset legend {
   font-family: catamaran, arial, sans-serif;
   font-size: 2em;
   font-weight: bold;
   letter-spacing: 2px;
 }
-main div section.choose fieldset div.options {
+main div section.choose .fieldsets fieldset div.options {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
-main div section.choose fieldset div.options input[type=radio] {
+main div section.choose .fieldsets fieldset div.options input[type=radio] {
   opacity: 0;
   position: absolute;
 }
-main div section.choose fieldset div.options input[type=radio] + label {
+main div section.choose .fieldsets fieldset div.options input[type=radio] + label {
   padding: 20px;
   border: solid 2px rgba(0, 0, 0, 0);
   transition: all 0.3s;
 }
-main div section.choose fieldset div.options input[type=radio]:hover + label {
+main div section.choose .fieldsets fieldset div.options input[type=radio]:hover + label {
   cursor: pointer;
 }
-main div section.choose fieldset div.options label {
+main div section.choose .fieldsets fieldset div.options label {
   width: 100%;
+  padding: 15px;
   font-family: quicksand, arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-main div section.choose fieldset div.options label img {
+main div section.choose .fieldsets fieldset div.options label img {
   margin: 0 auto 10px;
   max-width: 80px;
   display: block;
 }
-main div section.choose fieldset div.options div {
+main div section.choose .fieldsets fieldset div.options div {
   align-self: stretch;
-  width: calc(50% - 30px);
-  margin: 15px;
+  width: 50%;
+  padding: 5px;
+  margin: 0;
 }
-main div section.choose fieldset div.options div input[type=radio]:checked + label {
+main div section.choose .fieldsets fieldset div.options div input[type=radio]:checked + label {
   border: solid 2px #232327;
   transition: all 0.3s;
 }
-main div section.choose fieldset div.options.color input[type=radio]#red:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#red:checked + label {
   border: solid 2px #232327;
   background-color: #B10E03;
   color: #FDFDFD;
 }
-main div section.choose fieldset div.options.color input[type=radio]#green:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#green:checked + label {
   border: solid 2px #232327;
   background-color: #B4EEB4;
   color: #000000;
 }
-main div section.choose fieldset div.options.color input[type=radio]#white:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#white:checked + label {
   border: solid 2px #232327;
   background-color: #FDFDFD;
   color: #000000;
 }
-main div section.choose fieldset div.options.color input[type=radio]#black:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#black:checked + label {
   border: solid 2px #232327;
   background-color: #232327;
   color: #FDFDFD;
 }
-main div section.choose fieldset div.options.color input[type=radio]#blue:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#blue:checked + label {
   border: solid 2px #232327;
   background-color: #2AB0B9;
   color: #000000;
 }
-main div section.choose fieldset div.options.color input[type=radio]#pink:checked + label {
+main div section.choose .fieldsets fieldset div.options.color input[type=radio]#pink:checked + label {
   border: solid 2px #232327;
   background-color: #FFB6C1;
   color: #000000;
+}
+main div section.choose input[type=submit] {
+  border: solid 2px #232327;
+  width: 100%;
+  padding: 15px 0;
+  background: #232327;
+  color: #FDFDFD;
+  font-family: catamaran, arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: all 0.3s;
+}
+main div section.choose input[type=submit]:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #232327;
+  transition: all 0.3s;
+}
+
+main div.carousel-active {
+  align-items: center;
+}
+main div.carousel-active section.t-shirt .text-display {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  max-width: 40%;
+  text-align: center;
+  z-index: 999;
+}
+main div.carousel-active section.choose div.fieldsets {
+  position: relative;
+  display: block;
+  min-height: 350px;
+  overflow: hidden;
+  border: solid 2px #232327;
+}
+main div.carousel-active section.choose div.fieldsets fieldset {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  transition: all 0.5s 0.3s ease-in-out;
+}
+main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(2) {
+  left: 100%;
+}
+main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(3) {
+  left: 200%;
+}
+main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(4) {
+  left: 300%;
+}
+main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(5) {
+  left: 400%;
+}
+
+fieldset:nth-of-type(5) {
+  font-family: quicksand, arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1em;
+}
+fieldset:nth-of-type(5) input[name=text] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
+  margin: 1vh auto 3vh;
+  border: solid 1px black;
+}
+fieldset:nth-of-type(5) div {
+  display: block;
+}
+fieldset:nth-of-type(5) div:first-of-type {
+  margin-bottom: 3vh;
+}
+fieldset:nth-of-type(5) div select {
+  border: solid 1px black;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: right 50%;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1"><path d="M4 8L0 4h8z"/></svg>');
+  padding: 0.5em;
+  padding-right: 1.5em;
+}
+
+.text-display {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  max-width: 40%;
+  text-align: center;
+}
+.text-display#spicy-rice {
+  font-family: "Spicy Rice", arial, cursive;
+}
+.text-display#anton {
+  font-family: "Anton", arial, sans-serif;
+}
+.text-display#lobster {
+  font-family: "Lobster", cursive;
+}
+.text-display#arvo {
+  font-family: "Arvo", arial, serif;
+}
+.text-display.red {
+  color: #B10E03;
+}
+.text-display.green {
+  color: #B4EEB4;
+}
+.text-display.white {
+  color: #FDFDFD;
+}
+.text-display.black {
+  color: #000000;
+}
+.text-display.blue {
+  color: #2AB0B9;
+}
+.text-display.pink {
+  color: #FFB6C1;
+}
+
+@media print {
+  .noprint {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=/main.3d277483.css.map */

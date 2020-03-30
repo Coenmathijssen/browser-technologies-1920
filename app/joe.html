@@ -10,16 +10,16 @@
 <body>
   <nav>
     <ul>
-      <a href="/vorm">
+      <a href="#" id="form">
         <li>Vorm</li>
       </a>
-      <a href="/vorm2">
+      <a href="#" id="neck">
         <li>Kraag</li>
       </a>
-      <a href="#">
+      <a href="#" id="form">
         <li>Formaat</li>
       </a>
-      <a href="#">
+      <a href="#" id="color">
         <li>Kleur</li>
       </a>
       <a href="#">
@@ -27,135 +27,135 @@
       </a>
     </ul>
   </nav>
-  <a href="">
-    <div class="favorites">
-      <img src="./public/img/heart.svg" alt="Image of a heart">
-      <p>Favorites</p>
-
-  </a>
   <main>
-    <div>
+    <div class="container">
       <section class="t-shirt">
-        <img src="./public/img/shirt_front_male_reg.svg" alt="male T-shirt frontside">
+        <img src="./public/img/shirt_back_male_reg.svg" alt="male T-shirt frontside">
+        <img src="./public/img/shirt_back_female_reg.svg" alt="male T-shirt frontside">
+        <img src="./public/img/shirt_front_male_v.svg" alt="male T-shirt frontside">
+        <img src="./public/img/shirt_front_female_v.svg" alt="male T-shirt frontside">
         <div class="shirt-button-container">
           <button class="left">Left</button>
           <button class="right">Right</button>
         </div>
       </section>
       <section class="choose">
-        <form action="/submit">
-          <fieldset class="form">
-            <legend>Welke pasvorm wil je het liefst?</legend>
-            <div class="options">
-              <div>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">
-                  <img src="./public/img/shirt_front_male_reg.svg" alt="male t-shirt form">
-                  Mannelijk
-                </label>
+        <form action="/submit" id="form">
+          <div class="fieldsets">
+            <fieldset class="form">
+              <legend>Welke pasvorm wil je het liefst?</legend>
+              <div class="options">
+                <div>
+                  <input type="radio" id="male" name="gender" value="male" class="input">
+                  <label for="male">
+                    <img src="./public/img/shirt_front_male_reg.svg" alt="male t-shirt form">
+                    Mannelijk
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="female" name="gender" value="female" class="input">
+                  <label for="female">
+                    <img src="./public/img/shirt_front_female_reg.svg" alt="female t-shirt form">
+                    Vrouwelijk
+                  </label>
+                </div>
               </div>
-              <div>
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="female">
-                  <img src="./public/img/shirt_front_female_reg.svg" alt="female t-shirt form">
-                  Vrouwelijk
-                </label>
+            </fieldset>
+             <fieldset class="form">
+              <legend>Welke kraag zou je willen?</legend>
+              <div class="options">
+                <div>
+                  <input type="radio" id="v-neck" name="neck" value="v-neck" class="input">
+                  <label for="v-neck">
+                    <img src="./public/img/v-neck.svg" alt="V-neck">
+                    V-hals
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="reg-neck" name="neck" value="reg-neck" class="input">
+                  <label for="reg-neck">
+                    <img src="./public/img/reg-neck.svg" alt="Regular neck">
+                    Ronde hals
+                  </label>
+                </div>
               </div>
-            </div>
-          </fieldset>
-           <fieldset class="form">
-            <legend>Welke kraag zou je willen?</legend>
-            <div class="options">
-              <div>
-                <input type="radio" id="v-neck" name="neck" value="v-neck">
-                <label for="v-neck">
-                  <img src="./public/img/v-neck.svg" alt="V-neck">
-                  V-hals
-                </label>
+            </fieldset>
+             <fieldset class="form">
+              <legend>Welk formaat moet het t-shirt zijn?</legend>
+              <div class="options">
+                <div>
+                  <input type="radio" id="small" name="size" value="small" class="input">
+                  <label for="small">
+                    Small
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="regular" name="size" value="regular" class="input">
+                  <label for="regular">
+                    Regular
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="large" name="size" value="large" class="input">
+                  <label for="large">
+                    Large
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="x-large" name="size" value="x-large" class="input">
+                  <label for="x-large">
+                    X-large
+                  </label>
+                </div>
               </div>
-              <div>
-                <input type="radio" id="reg-neck" name="neck" value="reg-neck">
-                <label for="reg-neck">
-                  <img src="./public/img/reg-neck.svg" alt="Regular neck">
-                  Ronde hals
-                </label>
+            </fieldset>
+            <fieldset class="form">
+              <legend>Welk formaat moet het t-shirt zijn?</legend>
+              <div class="options color">
+                <div>
+                  <input type="radio" id="red" name="color" value="red" class="input">
+                  <label for="red">
+                    Rood
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="green" name="color" value="green" class="input">
+                  <label for="green">
+                    Groen
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="white" name="color" value="white" class="input">
+                  <label for="white">
+                    Wit
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="black" name="color" value="black" class="input">
+                  <label for="black">
+                    Zwart
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="blue" name="color" value="blue" class="input">
+                  <label for="blue">
+                    Blauw
+                  </label>
+                </div>
+                <div>
+                  <input type="radio" id="pink" name="color" value="pink" class="input">
+                  <label for="pink">
+                    Roze
+                  </label>
+                </div>
               </div>
-            </div>
-          </fieldset>
-           <fieldset class="form">
-            <legend>Welk formaat moet het t-shirt zijn?</legend>
-            <div class="options">
-              <div>
-                <input type="radio" id="small" name="size" value="small">
-                <label for="small">
-                  Small
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="regular" name="size" value="regular">
-                <label for="regular">
-                  Regular
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="large" name="size" value="large">
-                <label for="large">
-                  Large
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="x-large" name="size" value="x-large">
-                <label for="x-large">
-                  X-large
-                </label>
-              </div>
-            </div>
-          </fieldset>
-          <fieldset class="form">
-            <legend>Welk formaat moet het t-shirt zijn?</legend>
-            <div class="options color">
-              <div>
-                <input type="radio" id="red" name="color" value="red">
-                <label for="red">
-                  Rood
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="green" name="color" value="green">
-                <label for="green">
-                  Groen
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="white" name="color" value="white">
-                <label for="white">
-                  Wit
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="black" name="color" value="black">
-                <label for="black">
-                  Zwart
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="blue" name="color" value="blue">
-                <label for="blue">
-                  Blauw
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="pink" name="color" value="pink">
-                <label for="pink">
-                  Roze
-                </label>
-              </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
           <input type="submit" value="submit">
         </form>
       </section>
     </div>
   </main>
+  <script src="./public/js/index.js"></script>
 </body>
 </html>

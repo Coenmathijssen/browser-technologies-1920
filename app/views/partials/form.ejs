@@ -1,0 +1,28 @@
+<fieldset class="form" id="section-form">
+  <legend>Welke pasvorm wil je het liefst?</legend>
+  <div class="options">
+    <div>
+      <input type="radio" id="male" name="gender" value="male"
+        <% if(userData !== null && userData.gender === 'male') { %>
+          checked
+        <% } %>
+      class="input">
+
+      <label for="male">
+        <img src="/shirt_front_male_reg.af3a4699.svg" alt="male t-shirt form">
+        Mannelijk
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="female" name="gender" value="female"
+        <% if(userData !== null && userData.gender === 'female') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="female">
+        <img src="/shirt_front_female_reg.4703679a.svg" alt="female t-shirt form">
+        Vrouwelijk
+      </label>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,45 @@
+ <fieldset class="size" id="section-size">
+  <legend>Welk formaat moet het t-shirt zijn?</legend>
+  <div class="options">
+    <div>
+      <input type="radio" id="small" name="size" value="small"
+        <% if(userData !== null && userData.size === 'small') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="small">
+        Small
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="regular" name="size" value="regular"
+        <% if(userData !== null && userData.size === 'regular') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="regular">
+        Regular
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="large" name="size" value="large"
+        <% if(userData !== null && userData.size === 'large') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="large">
+        Large
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="x-large" name="size" value="x-large"
+        <% if(userData !== null && userData.size === 'x-large') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="x-large">
+        X-large
+      </label>
+    </div>
+  </div>
+</fieldset>

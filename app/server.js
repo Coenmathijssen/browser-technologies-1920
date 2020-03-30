@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Rendering homescreen
 app.get('/', function (req, res) {
-  res.render('test.ejs', {
+  res.render('user-form.ejs', {
     id: getRandomNumber(10000)
   })
 })
@@ -43,7 +43,7 @@ async function findItem (req, res) {
 
 // Code from Menno
 function storeData (data) {
-  const { id, gender, neck, size, color } = data
+  const { id, gender, neck, size, color, text, font, textColor } = data
   const jsonFile = 'data/data.json'
 
   fs.readFile(jsonFile, (err, content) => {
@@ -51,11 +51,10 @@ function storeData (data) {
 
     const contentJSON = JSON.parse(content)
 
-    const formData = { id, gender, neck, size, color }
+    const formData = { id, gender, neck, size, color, text, font, textColor }
     console.log('formData: ', formData)
 
     checkForDuplicateData(contentJSON, formData)
-
 
     fs.writeFile(jsonFile, JSON.stringify(contentJSON), err => {
       if (err) console.log(err)
@@ -99,4 +98,27 @@ app.use(express.urlencoded({ extended: false }))
 app.post('/submit', (req, res) => {
   storeData(req.body)
   res.redirect('/')
+})
+
+// Check if user exists and render the corresponding data in the page.
+app.post('/check-user', (req, res) => {
+  console.log('running')
+  const jsonFile = 'data/data.json'
+
+  fs.readFile(jsonFile, (err, content) => {
+    const id = req.body.usercode
+    console.log(id)
+    if (err) return console.log(err)
+
+    const contentJSON = JSON.parse(content)
+
+    const index = contentJSON.data.findIndex((data) => data.id === id)
+
+    if (index === -1) {
+      res.render('404.ejs')
+    } else {
+      console.log('exists')
+      res.redirect(`/shirt-designer/${id}`)
+    }
+  })
 })

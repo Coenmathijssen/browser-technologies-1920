@@ -1,0 +1,65 @@
+ <fieldset class="color" id="section-color">
+  <legend>Welke kleur moet het t-shirt zijn?</legend>
+  <div class="options color">
+    <div>
+      <input type="radio" id="red" name="color" value="red"
+        <% if(userData !== null && userData.color === 'red') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="red">
+        Rood
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="green" name="color" value="green"
+        <% if(userData !== null && userData.color === 'green') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="green">
+        Groen
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="white" name="color" value="white"
+        <% if(userData !== null && userData.color === 'white') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="white">
+        Wit
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="black" name="color" value="black"
+        <% if(userData !== null && userData.color === 'black') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="black">
+        Zwart
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="blue" name="color" value="blue"
+        <% if(userData !== null && userData.color === 'blue') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="blue">
+        Blauw
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="pink" name="color" value="pink"
+        <% if(userData !== null && userData.color === 'pink') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="pink">
+        Roze
+      </label>
+    </div>
+  </div>
+</fieldset>

@@ -1,0 +1,28 @@
+<fieldset class="neck" id="section-neck">
+  <legend>Welke kraag zou je willen?</legend>
+  <div class="options">
+    <div>
+      <input type="radio" id="v-neck" name="neck" value="v-neck"
+        <% if(userData !== null && userData.neck === 'v-neck') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="v-neck">
+        <img src="/v-neck.46508135.svg" alt="V-neck">
+        V-hals
+      </label>
+    </div>
+    <div>
+      <input type="radio" id="reg-neck" name="neck" value="reg-neck"
+        <% if(userData !== null && userData.neck === 'reg-neck') { %>
+          checked
+        <% } %>
+      class="input">
+      <label for="reg-neck">
+        <img src="/reg-neck.e9c7619f.svg" alt="Regular neck">
+        Ronde hals
+      </label>
+    </div>
+  </div>
+</fieldset>
+
