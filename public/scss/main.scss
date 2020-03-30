@@ -19,6 +19,26 @@ main > div.container {
   min-height: 90vh;
 }
 
+section.t-shirt {
+  width: 100%;
+}
+
+section.choose {
+  width: 100%;
+}
+
+@supports (display: flex) {
+  main div {
+    section.t-shirt {
+      width: 50%;
+    }
+
+    section.choose {
+      width: 50%;
+    }
+  }
+}
+
 main div {
   display: -webkit-flex;
   display: -moz-flex;
@@ -30,7 +50,6 @@ main div {
   padding: 0 30px;
 
   section.t-shirt {
-    width: 50%;
     padding: 0 20px;
 
     .text-display {
