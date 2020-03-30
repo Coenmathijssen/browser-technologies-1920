@@ -60,7 +60,6 @@ function changeShirt (inputField) {
     </g>
   </svg>
   `
-    return
   } if (inputField === formFemale) {
     gender = formFemale
     imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
@@ -85,7 +84,6 @@ function changeShirt (inputField) {
   </g>
 </svg>
 `
-    return
   } if (inputField === neckV && gender === formMale) {
     imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56">
   <defs>
@@ -111,7 +109,6 @@ function changeShirt (inputField) {
   </g>
 </svg>
 `
-    return
   } if (inputField === neckV && gender === formFemale) {
     imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
   <defs>
@@ -135,7 +132,6 @@ function changeShirt (inputField) {
   </g>
 </svg>
 `
-    return
   } if (inputField === neckReg && gender === formMale) {
     imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56">
   <defs>
@@ -163,7 +159,6 @@ function changeShirt (inputField) {
   </g>
 </svg>
 `
-    return
   } if (inputField === neckReg && gender === formFemale) {
     imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
   <defs>
@@ -186,34 +181,24 @@ function changeShirt (inputField) {
   </g>
 </svg>
 `
-    return
   } if (inputField === sizeS) {
-    svg.style.transform = 'scale(0.975)'
-    return
+    imageContainer.className = 'image sizeS'
   } if (inputField === sizeM) {
-    svg.style.transform = 'scale(1)'
-    return
+    imageContainer.className = 'image sizeM'
   } if (inputField === sizeL) {
-    svg.style.transform = 'scale(1.025)'
-    return
+    imageContainer.className = 'image sizeL'
   } if (inputField === sizeXL) {
-    svg.style.transform = 'scale(1.05)'
-    return
+    imageContainer.className = 'image sizeXL'
   } if (inputField === colorRed) {
     imageContainer.id = 'red'
-    return
   } if (inputField === colorGreen) {
     imageContainer.id = 'green'
-    return
   } if (inputField === colorWhite) {
     imageContainer.id = 'white'
-    return
   } if (inputField === colorBlack) {
     imageContainer.id = 'black'
-    return
   } if (inputField === colorBlue) {
     imageContainer.id = 'blue'
-    return
   } if (inputField === colorPink) {
     imageContainer.id = 'pink'
   }

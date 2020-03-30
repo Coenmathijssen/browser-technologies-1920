@@ -1,7 +1,11 @@
 <fieldset class="text" id="section-text">
   <legend>Tijd om een mooie tekst te bedenken.</legend>
   <label for="text">Typ een tekst voor op je shirt.</label>
-  <input type="text" name="text">
+  <input type="text" name="text" placeholder="
+    <% if(userData !== null) { %>
+   <%=userData.text%>
+    <% } %>
+  ">
   <div>
     <label for="font">Lettertype kiezen</label>
     <select id="font-list" name="font">
@@ -22,5 +26,5 @@
       <option value="pink">Roze</option>
     </select>
   </div>
-  <input type="submit" value="opslaan en printen">
+  <input type="submit" value="opslaan">
 </fieldset>

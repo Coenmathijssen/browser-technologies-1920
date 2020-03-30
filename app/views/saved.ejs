@@ -1,0 +1,18 @@
+<%- include('./partials/head.ejs') %>
+<body class="saved">
+  <main>
+    <div class="unique-code">
+      <p>Later nog je shirt bekijken en aanpassen?</p>
+       <p>Dan is dit je unieke code:
+        <% if(id !== null) { %>
+          <span><%=id%></span>
+        <% } else { %>
+           <span>Er is iets mis gegaan bij het ophalen van jouw unieke code. Plak deze in de zoekbalk op home.</span>
+        <% } %>
+      </p>
+      <a href="/shirt-designer" id="button">Terug naar home</a>
+    </div>
+  </main>
+  <script src="/js.d7e5c97d.js"></script>
+</body>
+</html>

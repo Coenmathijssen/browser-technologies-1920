@@ -2,6 +2,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: catamaran, arial, sans-serif;
 }
 
+p, label {
+  font-family: quicksand, arial, sans-serif;
+}
+
 .top-bar {
   display: flex;
   max-width: 1080px;
@@ -94,13 +98,29 @@ main div section.t-shirt {
   width: 50%;
   padding: 0 20px;
 }
+main div section.t-shirt .text-display {
+  z-index: 999;
+}
 main div section.t-shirt .image-container {
+  display: block;
   position: sticky;
-  top: 5vh;
+  top: 17vh;
 }
 main div section.t-shirt .image-container .image {
   display: block;
   width: 100%;
+}
+main div section.t-shirt .image-container .image.sizeS {
+  transform: scale(0.975);
+}
+main div section.t-shirt .image-container .image.sizeM {
+  transform: scale(1);
+}
+main div section.t-shirt .image-container .image.sizeL {
+  transform: scale(1.025);
+}
+main div section.t-shirt .image-container .image.sizeXL {
+  transform: scale(1.05);
 }
 main div section.t-shirt .image-container .image#red svg path {
   fill: #B10E03;
@@ -124,59 +144,44 @@ main div section.t-shirt .image-container .image svg {
   width: 100%;
   transition: all 0.3s;
 }
-main div section.t-shirt .shirt-button-container {
-  display: flex;
-  justify-content: space-between;
-  position: sticky;
-  top: 90vh;
-}
-main div section.t-shirt .shirt-button-container button {
+main div section.t-shirt .image-container #print-button {
   position: relative;
-  font-family: quicksand, arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: none;
-  background: none;
-  color: inherit;
-  border: solid 1px #232327;
+  display: block;
+  top: 10px;
+  border: solid 2px #232327;
+  width: 100%;
+  padding: 10px 0;
+  background: #232327;
+  color: #FDFDFD;
+  font-family: catamaran, arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
 }
-main div section.t-shirt .shirt-button-container button:hover {
-  cursor: pointer;
-}
-main div section.t-shirt .shirt-button-container button:first-of-type {
-  padding: 5px 10px 5px 20px;
-}
-main div section.t-shirt .shirt-button-container button:first-of-type::after {
-  content: "";
-  position: absolute;
-  content: "";
-  top: -5px;
-  left: -15px;
-  transform: rotate(180deg);
-  background: url("/arrow-black.91ecc346.svg") no-repeat;
-  background-size: 30px;
-  width: 30px;
-  height: 20px;
-  display: inline-block;
-}
-main div section.t-shirt .shirt-button-container button:last-of-type {
-  padding: 5px 20px 5px 10px;
-}
-main div section.t-shirt .shirt-button-container button:last-of-type::after {
-  content: "";
-  position: absolute;
-  content: "";
-  top: 7px;
-  right: -15px;
-  background: url("/arrow-black.91ecc346.svg") no-repeat;
-  background-size: 30px;
-  width: 30px;
-  height: 20px;
-  display: inline-block;
+main div section.t-shirt .image-container #print-button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #232327;
+  transition: all 0.3s;
 }
 main div section.choose {
   width: 50%;
-  padding: 0 20px;
+  padding: 0 10px;
+}
+main div section.choose .unique-code {
+  display: block;
+  width: 100%;
+  border: dashed 2px black;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+  text-align: center;
+}
+main div section.choose .unique-code p {
+  margin: 5px 0;
+}
+main div section.choose .unique-code p span {
+  font-weight: bold;
 }
 main div section.choose .fieldsets {
   display: flex;
@@ -268,14 +273,16 @@ main div section.choose .fieldsets fieldset div.options.color input[type=radio]#
   color: #000000;
 }
 main div section.choose input[type=submit] {
+  position: relative;
+  top: 10px;
   border: solid 2px #232327;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   background: #232327;
   color: #FDFDFD;
   font-family: catamaran, arial, sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1em;
   transition: all 0.3s;
 }
 main div section.choose input[type=submit]:hover {
@@ -296,6 +303,9 @@ main div.carousel-active section.t-shirt .text-display {
   max-width: 40%;
   text-align: center;
   z-index: 999;
+}
+main div.carousel-active section.choose .unique-code {
+  margin-top: 0;
 }
 main div.carousel-active section.choose div.fieldsets {
   position: relative;
@@ -324,6 +334,9 @@ main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(4) {
 }
 main div.carousel-active section.choose div.fieldsets fieldset:nth-of-type(5) {
   left: 400%;
+}
+main div.carousel-active section.choose div.fieldsets input[type=submit] {
+  top: 30px;
 }
 
 fieldset:nth-of-type(5) {
@@ -401,6 +414,119 @@ fieldset:nth-of-type(5) div select {
 @media print {
   .noprint {
     display: none;
+  }
+}
+.saved {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.saved .unique-code {
+  display: block;
+  width: 100%;
+  border: dashed 2px black;
+  padding: 2em;
+  text-align: center;
+  font-size: 1.5em;
+}
+.saved .unique-code span {
+  font-weight: bold;
+}
+.saved #button {
+  display: block;
+  border: solid 2px #232327;
+  width: 100%;
+  padding: 10px 0;
+  background: #232327;
+  color: #FDFDFD;
+  font-family: catamaran, arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.saved #button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #232327;
+  transition: all 0.3s;
+}
+
+@media all and (max-width: 1000px) {
+  .top-bar nav ul li {
+    font-size: 0.8em;
+  }
+  .top-bar .search {
+    font-size: 0.8em;
+  }
+
+  main div section.t-shirt {
+    padding: 0;
+  }
+
+  label {
+    font-size: 0.8em;
+  }
+
+  main div section.choose .fieldsets fieldset legend {
+    font-size: 1em;
+  }
+  main div section.choose .fieldsets fieldset div.options label {
+    font-size: 0.8em;
+  }
+}
+@media all and (max-width: 880px) {
+  .top-bar nav ul a:nth-of-type(1) li::after {
+    display: none;
+  }
+  .top-bar nav ul a:nth-of-type(2) li::after {
+    display: none;
+  }
+  .top-bar nav ul a:nth-of-type(3) li::after {
+    display: none;
+  }
+  .top-bar nav ul a:nth-of-type(4) li::after {
+    display: none;
+  }
+  .top-bar nav ul a:nth-of-type(5) li::after {
+    display: none;
+  }
+
+  main div section.choose .fieldsets fieldset div.options div {
+    padding: 0;
+  }
+  main div section.choose .fieldsets fieldset div.options input[type=radio] + label {
+    padding: 10px 2px;
+  }
+}
+@media all and (max-width: 800px) {
+  .top-bar {
+    flex-direction: column;
+  }
+  .top-bar .search {
+    width: 100%;
+  }
+  .top-bar nav {
+    width: 100%;
+  }
+
+  main div.container {
+    flex-direction: column-reverse;
+  }
+  main div.container .t-shirt {
+    width: 100%;
+    margin-top: 5vh;
+  }
+  main div.container .choose {
+    width: 100%;
+  }
+  main div.container .choose .fieldsets {
+    padding: 0;
+  }
+
+  main div.carousel-active section.choose div.fieldsets {
+    min-height: 320px;
   }
 }
 

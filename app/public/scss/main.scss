@@ -10,23 +10,6 @@ html {
   scroll-behavior: smooth;
 }
 
-// .favorites {
-//   max-width: 50px;
-//   padding: 5px 20px;
-//   position: absolute;
-//   left: 3vw;
-//   top: 5vh;
-//   border: solid 2px $semi-black;
-//   background-color: $white;
-
-//   p {
-//     text-decoration: none;
-//     display: inline;
-//     font-family: catamaran, arial, sans-serif;
-//     color: $black;
-//     font-weight: bo§ld;
-//   }
-// }
 
 input[name="id"] {
   display: none;
@@ -46,17 +29,34 @@ main div {
     width: 50%;
     padding: 0 20px;
 
-    // .text-display {
-    //   display: none;
-    // }
+    .text-display {
+      z-index: 999;
+    }
 
     .image-container {
+      display: block;
       position: sticky;
-      top: 5vh;
+      top: 17vh;
 
       .image {
         display: block;
         width: 100%;
+
+        &.sizeS {
+          transform: scale(0.975);
+        }
+
+        &.sizeM {
+          transform: scale(1);
+        }
+
+        &.sizeL {
+          transform: scale(1.025);
+        }
+
+        &.sizeXL {
+          transform: scale(1.05);
+        }
 
         &#red svg path {
           fill: $red;
@@ -87,69 +87,52 @@ main div {
           transition: all .3s;
         }
       }
-    }
 
-    .shirt-button-container {
-      display: flex;
-      justify-content: space-between;
-      position: sticky;
-      top: 90vh;
-
-      button {
+      #print-button {
         position: relative;
-        font-family: quicksand, arial, sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background: none;
-        background: none;
-        color: inherit;
-        border: solid 1px $semi-black;
+        display: block;
+        top: 10px;
+        border: solid 2px $semi-black;
+        width: 100%;
+        padding: 10px 0;
+        background: $semi-black;
+        color: $white;
+        font-family: catamaran, arial, sans-serif;
+        font-weight: bold;
+        font-size: 1em;
+        text-align: center;
+        text-decoration: none;
+        transition: all .3s;
+      }
 
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:first-of-type {
-          padding: 5px 10px 5px 20px;
-
-          &::after {
-            content: '';
-            position: absolute;
-            content: '';
-            top: -5px;
-            left: -15px;
-            transform: rotate(180deg);
-            background: url('../img/arrow-black.svg') no-repeat;
-            background-size: 30px;
-            width: 30px;
-            height: 20px;
-            display: inline-block;
-          }
-        }
-
-        &:last-of-type {
-          padding: 5px 20px 5px 10px;
-
-           &::after {
-            content: '';
-            position: absolute;
-            content: '';
-            top: 7px;
-            right: -15px;
-            background: url('../img/arrow-black.svg') no-repeat;
-            background-size: 30px;
-            width: 30px;
-            height: 20px;
-            display: inline-block;
-          }
-        }
+      #print-button:hover {
+        background-color: rgba(0,0,0,0);
+        color: $semi-black;
+        transition: all .3s;
       }
     }
   }
 
   section.choose {
     width: 50%;
-    padding: 0 20px;
+    padding: 0 10px;
+
+    .unique-code {
+      display: block;
+      width: 100%;
+      border: dashed 2px black;
+      margin-bottom: 2vh;
+      margin-top: 5vh;
+      text-align: center;
+
+      p {
+        margin: 5px 0;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
 
     .fieldsets {
       display: flex;
@@ -255,20 +238,20 @@ main div {
             color: $black;
           }
         }
-
-    }
-
+      }
     }
 
     input[type="submit"] {
+      position: relative;
+      top: 10px;
       border: solid 2px $semi-black;
       width: 100%;
-      padding: 15px 0;
+      padding: 10px 0;
       background: $semi-black;
       color: $white;
       font-family: catamaran, arial, sans-serif;
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 1em;
       transition: all .3s;
     }
 
@@ -298,6 +281,10 @@ main div.carousel-active {
   }
 
   section.choose {
+    .unique-code {
+      margin-top: 0;
+    }
+
     div.fieldsets {
       position: relative;
       display: block;
@@ -329,6 +316,10 @@ main div.carousel-active {
          &:nth-of-type(5) {
           left: 400%;
         }
+      }
+
+      input[type="submit"] {
+        top: 30px;
       }
     }
   }
@@ -425,4 +416,150 @@ fieldset {
 @media print
 {
 .noprint {display:none;}
+}
+
+// Saved page
+.saved {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .unique-code {
+    display: block;
+    width: 100%;
+    border: dashed 2px black;
+    padding: 2em;
+    text-align: center;
+    font-size: 1.5em;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  #button {
+    display: block;
+    border: solid 2px $semi-black;
+    width: 100%;
+    padding: 10px 0;
+    background: $semi-black;
+    color: $white;
+    font-family: catamaran, arial, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+  }
+
+  #button:hover {
+    background-color: rgba(0,0,0,0);
+    color: $semi-black;
+    transition: all .3s;
+  }
+}
+
+
+
+// MEDIA QUERIES
+
+@media all and (max-width: 1000px) {
+  .top-bar {
+    nav ul li {
+      font-size: 0.8em;
+    }
+    .search {
+      font-size: 0.8em;
+    }
+  }
+
+  main div section.t-shirt {
+    padding: 0;
+  }
+
+  label {
+    font-size: 0.8em;
+  }
+
+  main div section.choose .fieldsets fieldset {
+    legend {
+      font-size: 1em;
+    }
+
+    div.options label {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media all and (max-width: 880px) {
+  .top-bar {
+    nav ul {
+      a:nth-of-type(1) li::after {
+        display: none;
+      }
+
+      a:nth-of-type(2) li::after {
+        display: none;
+      }
+
+      a:nth-of-type(3) li::after {
+        display: none;
+      }
+
+      a:nth-of-type(4) li::after {
+        display: none;
+      }
+
+      a:nth-of-type(5) li::after {
+        display: none;
+      }
+    }
+  }
+
+  main div section.choose .fieldsets fieldset div.options {
+    div {
+      padding: 0;
+    }
+
+    input[type=radio] + label {
+      padding: 10px 2px;
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .top-bar {
+    flex-direction: column;
+
+    .search {
+      width: 100%;
+    }
+
+    nav {
+      width: 100%;
+    }
+  }
+
+  main div.container {
+    flex-direction: column-reverse;
+
+    .t-shirt {
+      width: 100%;
+      margin-top: 5vh;
+    }
+
+    .choose {
+      width: 100%;
+
+      .fieldsets {
+        padding: 0;
+      }
+    }
+  }
+
+  main div.carousel-active section.choose div.fieldsets {
+    min-height: 320px;
+  }
 }

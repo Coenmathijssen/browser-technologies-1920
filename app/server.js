@@ -15,18 +15,19 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
-// Rendering homescreen
-app.get('/', function (req, res) {
-  res.render('user-form.ejs', {
-    id: getRandomNumber(10000)
-  })
-})
-
 // Rendering shirt designer
 app.get('/shirt-designer', function (req, res) {
   res.render('user-form.ejs', {
     generatedID: getRandomNumber(10000),
     userData: null
+  })
+})
+
+// Rendering saved page
+app.get('/saved/:id', function (req, res) {
+  const id = req.params.id
+  res.render('saved.ejs', {
+    id: id
   })
 })
 
@@ -97,7 +98,8 @@ app.use(express.urlencoded({ extended: false }))
 // POST /login gets urlencoded bodies
 app.post('/submit', (req, res) => {
   storeData(req.body)
-  res.redirect('/')
+  const { id } = req.body
+  res.redirect(`/saved/${id}`)
 })
 
 // Check if user exists and render the corresponding data in the page.
