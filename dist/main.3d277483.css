@@ -20,6 +20,7 @@ p, label {
 }
 .top-bar nav ul {
   padding: 10px 0;
+  text-align: center;
   list-style-type: none;
   display: flex;
   justify-content: space-around;
@@ -254,7 +255,6 @@ main div section.choose .fieldsets fieldset div.options {
   }
 }
 main div section.choose .fieldsets fieldset div.options input[type=radio] {
-  opacity: 0;
   position: absolute;
 }
 main div section.choose .fieldsets fieldset div.options input[type=radio] + label {
@@ -278,8 +278,6 @@ main div section.choose .fieldsets fieldset div.options label img {
   display: block;
 }
 main div section.choose .fieldsets fieldset div.options div {
-  align-self: stretch;
-  width: 50%;
   padding: 5px;
   margin: 0;
 }
@@ -588,6 +586,26 @@ fieldset:nth-of-type(5) div select {
 
   main div.carousel-active section.choose div.fieldsets {
     min-height: 320px;
+  }
+}
+main div section.choose .fieldsets fieldset div.options div {
+  display: block;
+  width: 100%;
+}
+
+@supports (align-items: stretch) {
+  main div section.choose .fieldsets fieldset div.options div {
+    align-self: stretch;
+    width: 50%;
+  }
+}
+main div section.choose .fieldsets fieldset div.options input[type=radio] {
+  opacity: 1;
+}
+
+@supports (position: sticky) {
+  main div section.choose .fieldsets fieldset div.options input[type=radio] {
+    opacity: 0;
   }
 }
 
