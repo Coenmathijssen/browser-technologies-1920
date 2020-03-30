@@ -215,22 +215,28 @@ main div section.choose .fieldsets fieldset legend {
   letter-spacing: 2px;
 }
 main div section.choose .fieldsets fieldset div.options {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -o-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: inline;
+  width: 100%;
+}
+@supports (flex-wrap: wrap) {
+  main div section.choose .fieldsets fieldset div.options {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 }
 main div section.choose .fieldsets fieldset div.options input[type=radio] {
   opacity: 0;
@@ -334,9 +340,14 @@ main div.carousel-active section.choose .unique-code {
 main div.carousel-active section.choose div.fieldsets {
   position: relative;
   display: block;
-  min-height: 350px;
+  min-height: 580px;
   overflow: hidden;
   border: solid 2px #232327;
+}
+@supports (flex-wrap: wrap) {
+  main div.carousel-active section.choose div.fieldsets {
+    min-height: 350px;
+  }
 }
 main div.carousel-active section.choose div.fieldsets fieldset {
   position: absolute;
