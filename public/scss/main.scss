@@ -632,6 +632,7 @@ main div section.choose .fieldsets fieldset div.options div {
 
 @supports(align-items: stretch) {
   main div section.choose .fieldsets fieldset div.options div {
+    display: flex;
     align-self: stretch;
     width: 50%;
   }
