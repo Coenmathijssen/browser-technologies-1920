@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build ./joe.html",
     "dev": "nodemon server.js",
     "watch": "parcel watch ./joe.html",
@@ -16,12 +15,12 @@
   "devDependencies": {
     "ejs": "^3.0.1",
     "ejs-lint": "^1.0.1",
-    "express": "^4.17.1",
     "nodemon": "^2.0.2",
     "parcel": "^1.12.4"
   },
   "dependencies": {
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
   },
   "engines": {
     "node": "10.x"
