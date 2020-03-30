@@ -51,3 +51,36 @@ app.post('/check-user', (req, res) => {
     }
   })
 })
+
+// Code from Menno
+function storeData (data) {
+  const { id, gender, neck, size, color, text, font, textColor } = data
+  const jsonFile = 'data/data.json'
+
+  fs.readFile(jsonFile, (err, content) => {
+    if (err) return console.log(err)
+
+    const contentJSON = JSON.parse(content)
+
+    const formData = { id, gender, neck, size, color, text, font, textColor }
+    console.log('formData: ', formData)
+
+    checkForDuplicateData(contentJSON, formData)
+
+    fs.writeFile(jsonFile, JSON.stringify(contentJSON), err => {
+      if (err) console.log(err)
+    })
+  })
+}
+
+function checkForDuplicateData (contentJSON, formData) {
+  const index = contentJSON.data.findIndex((data) => data.id === formData.id)
+
+  if (index === -1) {
+    console.log('doesnt exist')
+    contentJSON.data.push(formData)
+  } else {
+    console.log('exists')
+    contentJSON.data[index] = formData
+  }
+}
