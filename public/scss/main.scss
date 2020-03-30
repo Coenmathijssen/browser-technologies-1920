@@ -630,6 +630,10 @@ main div section.choose .fieldsets fieldset div.options div {
   width: 100%;
 }
 
+main div section.choose .fieldsets fieldset div.options div input[type=radio]:checked + label {
+  border: solid 2px $semi-black;
+}
+
 @supports(align-items: stretch) {
   main div section.choose .fieldsets fieldset div.options div {
     display: flex;
@@ -645,5 +649,9 @@ main div section.choose .fieldsets fieldset div.options input[type=radio] {
 @supports(position: sticky) {
   main div section.choose .fieldsets fieldset div.options input[type=radio] {
     opacity: 0;
+  }
+
+  main div section.choose .fieldsets fieldset div.options div input[type=radio]:checked + label {
+    border: solid 2px rgba(0,0,0,0);
   }
 }
