@@ -16,6 +16,14 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 
 // Rendering shirt designer
+app.get('/', function (req, res) {
+  res.render('user-form.ejs', {
+    generatedID: getRandomNumber(10000),
+    userData: null
+  })
+})
+
+// Rendering shirt designer
 app.get('/shirt-designer', function (req, res) {
   res.render('user-form.ejs', {
     generatedID: getRandomNumber(10000),
