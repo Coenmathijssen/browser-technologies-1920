@@ -89,6 +89,10 @@ main > div.container {
 }
 
 main div {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
   display: flex;
   max-width: 1080px;
   margin: 0 auto;
@@ -184,7 +188,14 @@ main div section.choose .unique-code p span {
   font-weight: bold;
 }
 main div section.choose .fieldsets {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 main div section.choose .fieldsets fieldset {
@@ -196,16 +207,29 @@ main div section.choose .fieldsets fieldset {
   margin: 20px 0;
 }
 main div section.choose .fieldsets fieldset legend {
+  width: 100%;
   font-family: catamaran, arial, sans-serif;
   font-size: 2em;
   font-weight: bold;
+  text-align: center;
   letter-spacing: 2px;
 }
 main div section.choose .fieldsets fieldset div.options {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 main div section.choose .fieldsets fieldset div.options input[type=radio] {
@@ -417,8 +441,16 @@ fieldset:nth-of-type(5) div select {
   }
 }
 .saved {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100vh;
 }
@@ -502,6 +534,9 @@ fieldset:nth-of-type(5) div select {
 }
 @media all and (max-width: 800px) {
   .top-bar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .top-bar .search {
