@@ -1,4 +1,6 @@
 # Browser technologies - CMDA minor web
+![best-layer](https://user-images.githubusercontent.com/43337909/78035258-25bb1780-7369-11ea-998e-fe49ae3e6699.png)
+
 ## What is this subject about?
 This subject is about learning how your website/webapp responds to all different browsers, network speeds, devices, etc. FE developers tend to create an awesome website, but forget to make it accessible for everyone. In this subject you learn about all the different circumstances and how they effect your website. As a result, you have to create a website which is accessible for everyone, no matter where they are or who they are.
 
