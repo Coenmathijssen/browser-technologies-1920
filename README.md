@@ -72,6 +72,7 @@ Now we're talking! Het formulier is nu multistep. Door progressive disclossure t
 ![best-layer](https://user-images.githubusercontent.com/43337909/78037053-50a66b00-736b-11ea-8f5c-f7eadbc7c61d.png)
 
 ## Toelichting
-[Testen op verschillende browsers en @support detectie](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-op-verschillende-browsers-&-feature-detectie)
-[Uitleg en toepassing progressive enhancement](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Uitleg-en-toepassing-progressive-enhancement)
-[Testen 8 features](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-8-features)
+- [Testen op verschillende browsers en @support detectie](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-op-verschillende-browsers-&-feature-detectie)
+- [Uitleg en toepassing progressive enhancement](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Uitleg-en-toepassing-progressive-enhancement)
+- [Testen 8 features](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-8-features)
+- [Conclusie](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Conclusie)
