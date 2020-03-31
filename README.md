@@ -50,7 +50,7 @@ Deploy website on Heroku:
 Ik wil mijn eigen t-shirt-met-nerdy-tekst kunnen ontwerpen, printen, opslaan, en een volgende keer dat ik de site bezoek kunnen gebruiken.
 
 ## De core functionaliteit
-De core functionaliteit is dat je op elk device en elke browser een shirt kan designen. Vervolgens de site kan verlaten, om daarna weer door te kunnen gaan waar je gebleven was. Om dit te bereiken, moet je ervoor zorgen dat Javacript server side gerendered wordt. Als je dit niet doet, gaat het onmogelijk worden om je data op te slaan wanneer je JS en cookies uit hebt staan. Met dit in mijn achterhoofd ben ik gaan schetsen:
+De core functionaliteit is dat je op elk device en elke browser een shirt kan designen. Vervolgens de site kan verlaten, om daarna weer door te kunnen gaan waar je gebleven was. Om dit te bereiken, moet je ervoor zorgen dat Javacript server side gerendered wordt. Als je dit niet doet, gaat het onmogelijk worden om je data op te slaan wanneer je JS en cookies uit hebt staan. Daarnaast moet het shirt ook makkelijk geprint kunnen worden. Veel mensen weten wel hoe je een webpagina print. Maar dan neem je ook alle ongerelateerde dingen aan het shirt mee. Daarom moet er een toegankelijke print button zijn waarmee je het shirt kan printen. Met dit in mijn achterhoofd ben ik gaan schetsen:
 
 ![schetsen-web-1](https://user-images.githubusercontent.com/43337909/78036649-daa20400-736a-11ea-9d85-f31ca4e72adc.jpg)
 ![schetsen-web-2](https://user-images.githubusercontent.com/43337909/78036662-dc6bc780-736a-11ea-98b9-8db0f6319c87.jpg)
@@ -71,3 +71,7 @@ Met een likje verf wordt het al een stuk meer usable! De Javascript is niet aanw
 Now we're talking! Het formulier is nu multistep. Door progressive disclossure toe te passen blijft het overzichtelijk en behapbaar. Daarnaast wordt het t-shirt nu direct aangepast als je op een andere optie klikt! 
 ![best-layer](https://user-images.githubusercontent.com/43337909/78037053-50a66b00-736b-11ea-8f5c-f7eadbc7c61d.png)
 
+## Toelichting
+[Testen op verschillende browsers en @support detectie](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-op-verschillende-browsers-&-feature-detectie)
+[Uitleg en toepassing progressive enhancement](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Uitleg-en-toepassing-progressive-enhancement)
+[Testen 8 features](https://github.com/Coenmathijssen/browser-technologies-1920/wiki/Testen-8-features)
