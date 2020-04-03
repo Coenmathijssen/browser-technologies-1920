@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.17 28.89">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #010300;
+        stroke: #010300;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>heart</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="OBJECTS">
+      <polygon class="cls-1" points="0.5 11.44 16.1 28.39 31.67 11.28 28.79 0.5 20.7 0.5 16.09 10.49 12.29 0.5 3.1 0.5 0.5 11.44"/>
+    </g>
+  </g>
+</svg>
