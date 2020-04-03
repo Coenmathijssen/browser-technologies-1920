@@ -34,7 +34,7 @@ function changeShirt (inputField) {
   const svg = document.getElementsByTagName('svg')[0]
   if (inputField === formMale) {
     gender = formMale
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56" style="max-width: 500px;">
     <defs>
       <style>
         .cls-2{stroke-miterlimit:10;stroke-width:.5px;fill:none;stroke:#000}
@@ -62,7 +62,7 @@ function changeShirt (inputField) {
   `
   } if (inputField === formFemale) {
     gender = formFemale
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42" style="max-width: 500px;">
   <defs>
     <style>
       .cls-4{stroke-miterlimit:10}.cls-3,.cls-4{stroke-width:.5px;fill:none;stroke:#000}.cls-3{stroke-linecap:round;stroke-linejoin:round}
@@ -85,7 +85,7 @@ function changeShirt (inputField) {
 </svg>
 `
   } if (inputField === neckV && gender === formMale) {
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56" style="max-width: 500px;">
   <defs>
     <style>
       .cls-2{stroke-miterlimit:10;stroke-width:.5px;fill:none;stroke:#000}
@@ -110,7 +110,7 @@ function changeShirt (inputField) {
 </svg>
 `
   } if (inputField === neckV && gender === formFemale) {
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42" style="max-width: 500px;">
   <defs>
     <style>
       .cls-4{stroke-miterlimit:10}.cls-3,.cls-4{stroke-width:.5px;fill:none;stroke:#000}.cls-3{stroke-linecap:round;stroke-linejoin:round}
@@ -133,7 +133,7 @@ function changeShirt (inputField) {
 </svg>
 `
   } if (inputField === neckReg && gender === formMale) {
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.47 182.56" style="max-width: 500px;">
   <defs>
     <style>
       .cls-2{stroke-miterlimit:10;stroke-width:.5px;fill:none;stroke:#000}
@@ -160,7 +160,7 @@ function changeShirt (inputField) {
 </svg>
 `
   } if (inputField === neckReg && gender === formFemale) {
-    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42">
+    imageContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.27 190.42" style="max-width: 500px;">
   <defs>
     <style>
       .cls-3{stroke-width:.5px;fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round}
@@ -215,13 +215,15 @@ function carousel (number) {
       formCount++
       for (let i = 0; i < formParts.length; i++) {
         let transformPercentage = 100 * formCount
-        formParts[i].style.transform = `translateX(-${transformPercentage}%)`
+        // formParts[i].style.transform = `translateX(-${transformPercentage}%)`
+        formParts[i].classList = `transform${transformPercentage}`
       }
     }
   } else {
     let transformPercentage = 100 * number
     for (let i = 0; i < formParts.length; i++) {
-      formParts[i].style.transform = `translateX(-${transformPercentage}%)`
+      // formParts[i].style.transform = `translateX(-${transformPercentage}%)`
+      formParts[i].classList = `transform${transformPercentage}`
     }
     formCount = number
   }

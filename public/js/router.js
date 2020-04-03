@@ -26,6 +26,11 @@ router.get('/saved/:id', function (req, res) {
   })
 })
 
+// Test
+router.get('/test', (req, res) => {
+  res.render('404.ejs')
+})
+
 // Rendering the form screen for a specific user
 router.get('/shirt-designer/:id', findItem)
 

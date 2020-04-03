@@ -1,6 +1,7 @@
 @import 'typography';
 @import 'colors';
 @import 'navigation';
+@import '404';
 
 * {
   box-sizing: border-box;
@@ -9,7 +10,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 
 input[name="id"] {
   display: none;
@@ -26,6 +26,8 @@ section.t-shirt {
 section.choose {
   width: 100%;
 }
+
+
 
 @supports (display: flex) {
   main div {
@@ -365,6 +367,26 @@ main div.carousel-active {
          &:nth-of-type(5) {
           left: 400%;
         }
+
+        &.transform0 {
+          transform: translateX(0);
+        }
+
+        &.transform100 {
+          transform: translateX(-100%);
+        }
+
+        &.transform200 {
+          transform: translateX(-200%);
+        }
+
+        &.transform300 {
+          transform: translateX(-300%);
+        }
+
+        &.transform400 {
+          transform: translateX(-400%);
+        }
       }
 
       input[type="submit"] {
@@ -643,8 +665,8 @@ main div section.choose .fieldsets fieldset div.options div input[type=radio]:ch
 }
 
 main div section.choose .fieldsets fieldset div.options input[type=radio] {
-    opacity: 1;
-  }
+  opacity: 1;
+}
 
 @supports(position: sticky) {
   main div section.choose .fieldsets fieldset div.options input[type=radio] {

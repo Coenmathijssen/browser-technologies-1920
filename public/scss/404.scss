@@ -1,0 +1,31 @@
+.error {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    position: relative;
+    display: block;
+    top: 10px;
+    border: solid 2px $semi-black;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 0;
+    background: $semi-black;
+    color: $white;
+    font-family: catamaran, arial, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      background-color: rgba(0,0,0,0);
+      color: $semi-black;
+      transition: all .3s;
+    }
+  }
+}
